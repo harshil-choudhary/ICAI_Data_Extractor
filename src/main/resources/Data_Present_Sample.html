@@ -1,0 +1,282 @@
+<html>
+
+<script Language="JavaScript">
+    var msg = "Online list of Members as on 01-04-2021";
+    var spacer = ".......             ........";
+    var pos = 0;
+    function ScrollMessage()
+    {
+        window.status = msg.substring(pos,msg.length)+spacer+msg.substring(0,pos);
+        pos++;
+        if (pos > msg.length) pos = 0;
+        window.setTimeout("ScrollMessage()",250);
+    }
+    ScrollMessage();
+</script>
+
+<script Language="JavaScript">
+    <!--
+    function trim(str)
+    {
+        var len;
+        for(i=0;i<=len;i++)
+        {
+            if(str.indexOf(' ')==0)
+            {
+                str=str.substring(1,len);
+            }
+        }
+        return str;
+    }
+
+    function valid(frm)
+    {
+        if (trim(frm.t1.value == ''))
+        {
+            alert ('Membership No should be 6 digit, prefix with 0 if less than 6 digit');
+            frm.t1.focus();
+            return false;
+        }
+        if(frm.t1.value.length < 6 )
+        {
+            alert('Membership No should be 6 digit, prefix with 0 if less than 6 digit');
+            frm.t1.focus();
+            return false;
+        }
+    }
+    //
+    -->
+</script>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>List of Members</title>
+</head>
+
+<body>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td background="picture/top-nav-bg.gif" width="52%" height="17">
+            <img src="picture/bank.gif" width="300" height="17"></td>
+        <td background="picture/top-nav-bg.gif" width="330">&nbsp;</td>
+        <td background="picture/top-nav-bg.gif" width="100" height="17">
+            <img src="picture/bank.gif" width="100" height="17"></td>
+    </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td background="picture/logo-bg.gif" height="72" width="90%">
+            <img src="picture/logo1.gif" width="512" height="72"></td>
+        <td width="182" background="picture/logo-bg.gif" align="right">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>
+        </td>
+
+    </tr>
+
+    <td bgcolor="#D6DBE7" width="100%" height="23" align="right">
+        <SCRIPT language=JavaScript>
+            <!-- Hide script from older browsers
+            -->
+            <!-- Initialize the variable for use below -->
+            var fulldate = "";
+
+            <!-- Establish a month name array to be used to retrieve a month's proper name -->
+            var months = new Array(13);
+            months[1]="January";
+            months[2]="February";
+            months[3]="March";
+            months[4]="April";
+            months[5]="May";
+            months[6]="June";
+            months[7]="July";
+            months[8]="August";
+            months[9]="September";
+            months[10]="October";
+            months[11]="November";
+            months[12]="December";
+            <!-- Establish a day name array to be used to retrieve a day's proper name -->
+            var days=new Array(8);
+            days[1]="Sunday";
+            days[2]="Monday";
+            days[3]="Tuesday";
+            days[4]="Wednesday";
+            days[5]="Thursday";
+            days[6]="Friday";
+            days[7]="Saturday";
+
+            <!-- Get today's date, we will piece this apart below and reconfigure it to display in European Format -->
+            var now = new Date();
+
+            <!-- Get the month value from today's date, then pull its proper name from the month array -->
+            var month = months[now.getMonth() + 1];
+            <!-- Get the day value from today's date, then pull its proper name from the day array -->
+            var day=days[now.getDay() + 1];
+            <!-- Get the date value from today's date -->
+            var date=now.getDate();
+            <!-- Get the year value from today's date -->
+            var year=now.getYear();
+            <!-- Today's date was pulled from the user's PC.  Therefore, we are subject to the users date settings. -->
+            <!-- In order to force a 4 character date, we perform the following If/then check -->
+
+            <!-- This takes care of Netscape -->
+            if (year > 100 && year <2000){ var current_year=now.getYear()-100; if(current_year<10) year="20" + 0 +
+                current_year; else year="20" + current_year; } else if (year==100) year=2000; <!-- For IE it remains the
+				same as year -->
+
+            <!-- Reformat date to appear in European Format -->
+            fulldate = date + " " + month + ", " + year;
+
+
+
+            <!-- Display date -->
+            document.write ("<font face='verdana' color='blue' size='2'>" + fulldate);
+        </SCRIPT>
+
+
+</table>
+
+<p><a><b><font size="4"><span style="background-color: #C0C0C0">
+  <marquee behavior="alternate" width="1107" height="22">List of Members as on
+  01-04-2021</marquee>
+  </span></font>&nbsp;</b></p>
+</a>
+<form name=frm BOTID="0" METHOD="POST" ACTION="lom.asp">
+    <table BORDER="0">
+        <tr>
+            <td><b>Please enter your 6 digit Membership
+                No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b></td>
+            <td><input  NAME="t1" VALUE="100000" size="6"></td>
+        </tr>
+    </table>
+    &nbsp;
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input onclick="return valid(this.form)" TYPE="Submit" value = "Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input TYPE="Reset"></p>
+
+    <table border="0" width="100%">
+        <tr>
+            <td width="50%" align="center" colspan="2" bgcolor="#C0C0C0"><b>Indian
+                Section</b></td>
+            <td width="50%" align="center" colspan="2" bgcolor="#C0C0C0"><b>Foreign
+                Section</b></td>
+        </tr>
+        <tr>
+            <td width="3%">Name</td>
+            <td width="47%"><b>ARUN KUMAR J V
+                , FCA
+            </b></td>
+            <td width="3%"></td>
+            <td width="47%"></td>
+        </tr>
+        <tr>
+            <td width="3%">Gender</td>
+            <td width="47%"><b>M
+            </b></td>
+            <td width="3%"></td>
+            <td width="47%"></td>
+        </tr>
+        <tr>
+            <td width="3%">Qualification</td>
+            <td width="47%"><b>&nbsp;
+            </b></td>
+            <td width="3%"></td>
+            <td width="47%"></td>
+        </tr>
+        <tr>
+            <td width="3%">Address</td>
+            <td width="47%"><b>A-314 BHAVESHWAR ARCADE
+            </b></td>
+            <td width="3%">Address</td>
+            <td width="47%"><b>NOT APPLICABLE
+            </b></td>
+        </tr>
+        <tr>
+            <td width="3%"></td>
+            <td width="47%"><b>OPP SHREYAS THEATRE
+            </b></td>
+            <td width="3%"></td>
+            <td width="47%"><b>&nbsp;
+            </b></td>
+        </tr>
+        <tr>
+            <td width="3%"></td>
+            <td width="47%"><b>L B S MARG
+            </b></td>
+            <td width="3%"></td>
+            <td width="47%"><b>&nbsp;
+            </b></td>
+        </tr>
+        <tr>
+            <td width="3%"></td>
+            <td width="47%"><b>&nbsp;
+            </b></td>
+            <td width="3%"></td>
+            <td width="47%"><b>&nbsp;
+            </b></td>
+        </tr>
+        <tr>
+            <td width="3%"></td>
+            <td width="47%"><b>MUMBAI
+            </b></td>
+            <td width="3%"></td>
+            <td width="47%"><b>&nbsp;
+            </b></td>
+        </tr>
+        <tr>
+            <td width="3%"></td>
+            <td width="47%"><b>400086
+            </b></td>
+            <td width="3%"></td>
+            <td width="47%"><b>&nbsp;
+            </b></td>
+        </tr>
+        <tr>
+            <td width="3%"></td>
+            <td width="47%"></td>
+            <td width="3%"></td>
+            <td width="47%"><b>&nbsp;
+            </b></td>
+        </tr>
+        <tr>
+            <td width="3%">COP Status</td>
+            <td width="47%"><b>FULL TIME
+            </b></td>
+            <td width="3%"></td>
+            <td width="47%"></td>
+        </tr>
+        <tr>
+            <td width="16%">Associate Year</td>
+            <td width="34%"><b>A1995
+            </b></td>
+            <td width="17%"></td>
+            <td width="33%"></td>
+        </tr>
+        <tr>
+            <td width="16%">Fellow Year</td>
+            <td width="34%"><b>F2013
+            </b></td>
+            <td width="17%">Region in India</td>
+            <td width="33%"><b>&nbsp;
+            </b></td>
+        </tr>
+    </table>
+    <hr>
+
+    <p>&nbsp;</p>
+</form>
+<table width="100%" border="1">
+    <thead>
+    </thead>
+</table>
+<p align="right"><a href="lom.asp"><b>Back</b></a></p>
+
+</body>
+
+</html>
