@@ -7,21 +7,18 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.jsoup.nodes.Element;
 
-import javax.net.ssl.SSLSession;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
-import java.net.http.HttpHeaders;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -132,8 +129,8 @@ public class Main {
     }
 
     public static void main(String args[]) throws URISyntaxException, IOException, InterruptedException {
-        Long membershipNumberStart = 0L;
-        Long membershipNumberEnd = 99999L;
+        Long membershipNumberStart = 0L;        // Range start
+        Long membershipNumberEnd = 999999L;     // Range end
 
         Instant start = Instant.now();
         csvBuilder(membershipNumberStart, membershipNumberEnd);
